@@ -9,6 +9,7 @@ public Ship(int x, int y) {
 
 X = x;
 Y = y;
+
 }
 public Ship(OceanMap oceanMap) {
 // TODO Auto-generated constructor stub
