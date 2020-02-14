@@ -14,6 +14,5 @@ public class OceanMap  {
 			 x=r.nextInt(10);
 			 y=r.nextInt(10);
 		return new Point(x,y);
-	 
 	}
 }
