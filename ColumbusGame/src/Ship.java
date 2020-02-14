@@ -2,51 +2,74 @@ import java.awt.Point;
 import javafx.scene.layout.AnchorPane;
 
 public class Ship {
-	 int X,Y;
-	 Point currentLocation;
-	 AnchorPane root;
-	 public Ship(int x, int y) {
+int X,Y;
+Point currentLocation;
+AnchorPane root;
+public Ship(int x, int y) {
 
-			X = x;
-			Y = y;
-		}
-	public Ship(OceanMap oceanMap) {
-		// TODO Auto-generated constructor stub
-	}
-	public void goWest() 
-	{
-		// TODO Auto-generated method stub
-		if (X != 0)
-		{
-			X--;
-		}
-	}
-	public void goSouth() {
-		// TODO Auto-generated method stub
-		if (Y != 9)
-		{
-			Y++;
-		}
-	}
-	public void goNorth() {
-		// TODO Auto-generated method stub
-		if (Y != 0)
-		{
-			Y--;
-		}
-	}
-	public void goEast() 
-	{
-		// TODO Auto-generated method stub
-		if (X != 9)
-		{
-			X++;
-		}
-	}
-	public Point getShipLocation() {
-		// TODO Auto-generated method stub
-		return new Point(X,Y);
-	}
-	
+X = x;
+Y = y;
+}
+public Ship(OceanMap oceanMap) {
+// TODO Auto-generated constructor stub
+}
+public void goWest(int[] IslocX,int[] IslocY)
+{
+// TODO Auto-generated method stub
+Boolean iscellempty = true;
+if (X != 0)
+{
+for(int i=0;i<IslocX.length;i++)
+{
+if(IslocX[i] != 0 && IslocY[i] != 0 && X-1 == IslocX[i] && Y == IslocY[i])
+{
+iscellempty =false;
+break;
+}
+}
+if(iscellempty)
+X--;
+}
+
+
+}
+public void goSouth(int[] IslocX,int[] IslocY) {
+// TODO Auto-generated method stub
+
+if (Y != 9)
+{
+Y++;
+}
+}
+public void goNorth(int[] IslocX,int[] IslocY) {
+// TODO Auto-generated method stub
+if (Y != 0)
+{
+Y--;
+}
+}
+public void goEast(int[] IslocX,int[] IslocY)
+{
+// TODO Auto-generated method stub
+Boolean iscellempty = true;
+if (X != 9)
+{
+for(int i=0;i<IslocX.length;i++)
+{
+if(IslocX[i] != 0 && IslocY[i] != 0 && X+1 == IslocX[i] && Y == IslocY[i])
+{
+iscellempty =false;
+break;
+}
+}
+if(iscellempty)
+X++;
+}
+}
+public Point getShipLocation() {
+// TODO Auto-generated method stub
+return new Point(X,Y);
+}
+
 
 }
