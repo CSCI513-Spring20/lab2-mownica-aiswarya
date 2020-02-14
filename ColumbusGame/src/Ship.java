@@ -1,3 +1,4 @@
+
 import java.awt.Point;
 import javafx.scene.layout.AnchorPane;
 
@@ -11,6 +12,7 @@ X = x;
 Y = y;
 
 }
+
 public Ship(OceanMap oceanMap) {
 // TODO Auto-generated constructor stub
 }
@@ -27,25 +29,43 @@ if(IslocX[i] != 0 && IslocY[i] != 0 && X-1 == IslocX[i] && Y == IslocY[i])
 iscellempty =false;
 break;
 }
+
 }
 if(iscellempty)
 X--;
 }
-
-
 }
 public void goSouth(int[] IslocX,int[] IslocY) {
 // TODO Auto-generated method stub
-
+Boolean iscellempty = true;
 if (Y != 9)
 {
+for(int i=0;i<IslocY.length;i++)
+{
+if(IslocX[i] != 0 && IslocY[i] != 0 && X == IslocX[i] && Y+1 == IslocY[i])
+{
+iscellempty =false;
+break;
+}
+}
+if(iscellempty)
 Y++;
 }
 }
 public void goNorth(int[] IslocX,int[] IslocY) {
 // TODO Auto-generated method stub
+Boolean iscellempty = true;
 if (Y != 0)
 {
+for(int i=0;i<IslocY.length;i++)
+{
+if(IslocX[i] != 0 && IslocY[i] != 0 && X == IslocX[i] && Y-1 == IslocY[i])
+{
+iscellempty =false;
+break;
+}
+}
+if(iscellempty)
 Y--;
 }
 }
@@ -70,7 +90,6 @@ X++;
 public Point getShipLocation() {
 // TODO Auto-generated method stub
 return new Point(X,Y);
+
 }
-
-
 }
